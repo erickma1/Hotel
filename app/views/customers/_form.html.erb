@@ -11,57 +11,64 @@
     </div>
   <% end %>
 
-  <div>
+      <div class="card" style="width: 100%;" >
+     <div class="card-header" style="background-color: #e3f2fd;">New Customer</div>
+      <div class="card-body">
+
+  <div class="mb-3">
     <%= form.label :firstName, style: "display: block" %>
-    <%= form.text_field :firstName %>
+    <%= form.text_field :firstName, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :lastName, style: "display: block" %>
-    <%= form.text_field :lastName %>
+    <%= form.text_field :lastName, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :dateofBirth, style: "display: block" %>
-    <%= form.date_field :dateofBirth %>
+    <%= form.date_field :dateofBirth, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :mobileNumber, style: "display: block" %>
-    <%= form.text_field :mobileNumber %>
-  </div>
+    <%= form.text_field :mobileNumber, class: "form-control" %>
+  </div class="mb-3">
 
-  <div>
+  <div class="mb-3">
     <%= form.label :idType, style: "display: block" %>
-    <%= form.text_field :idType %>
+    <%= form.text_field :idType, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :idNumber, style: "display: block" %>
-    <%= form.text_field :idNumber %>
+    <%= form.text_field :idNumber, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :registeredBy, style: "display: block" %>
-    <%= form.number_field :registeredBy %>
+    <%= form.number_field :registeredBy, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :comments, "Comment", style: "display: block" %>
+    <%= form.text_field :comments, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :comments, style: "display: block" %>
-    <%= form.text_field :comments %>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
-
-  <div>
-    <%= form.submit %>
+  </div>
+  </div>
   </div>
 <% end %>
