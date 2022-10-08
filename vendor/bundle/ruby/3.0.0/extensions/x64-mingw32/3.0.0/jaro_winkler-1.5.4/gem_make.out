@@ -1,0 +1,19 @@
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+C:/Ruby30-x64/bin/ruby.exe -I C:/Ruby30-x64/lib/ruby/site_ruby/3.0.0 extconf.rb
+creating Makefile
+
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+make DESTDIR\= sitearchdir\=./.gem.20221001-13268-n2t1sh sitelibdir\=./.gem.20221001-13268-n2t1sh clean
+
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+make DESTDIR\= sitearchdir\=./.gem.20221001-13268-n2t1sh sitelibdir\=./.gem.20221001-13268-n2t1sh
+generating jaro_winkler_ext-x64-mingw32.def
+compiling adj_matrix.c
+compiling codepoints.c
+compiling jaro.c
+compiling jaro_winkler.c
+linking shared-object jaro_winkler/jaro_winkler_ext.so
+
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
+make DESTDIR\= sitearchdir\=./.gem.20221001-13268-n2t1sh sitelibdir\=./.gem.20221001-13268-n2t1sh install
+/usr/bin/install -c -m 0755 jaro_winkler_ext.so ./.gem.20221001-13268-n2t1sh/jaro_winkler

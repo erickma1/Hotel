@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_id: 1
+  start_date: 2022-10-04
+  end_date: 2022-10-04
+  issued_by: 1
+  booking_status: 1
+  closed_date: 2022-10-04
+  closed_by: 1
+  comments: MyString
+
+two:
+  room_id: 1
+  start_date: 2022-10-04
+  end_date: 2022-10-04
+  issued_by: 1
+  booking_status: 1
+  closed_date: 2022-10-04
+  closed_by: 1
+  comments: MyString

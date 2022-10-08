@@ -1,0 +1,17 @@
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+C:/Ruby30-x64/bin/ruby.exe -I C:/Ruby30-x64/lib/ruby/site_ruby/3.0.0 extconf.rb
+creating Makefile
+
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220928-8496-28yymw sitelibdir\=./.gem.20220928-8496-28yymw clean
+
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220928-8496-28yymw sitelibdir\=./.gem.20220928-8496-28yymw
+generating debug-x64-mingw32.def
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: C:/Users/default.DESKTOP-AM37V4U/hotel_system/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20220928-8496-28yymw sitelibdir\=./.gem.20220928-8496-28yymw install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220928-8496-28yymw/debug

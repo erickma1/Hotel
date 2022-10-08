@@ -1,0 +1,67 @@
+<%= form_with(model: customer) do |form| %>
+  <% if customer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+        <% customer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :firstName, style: "display: block" %>
+    <%= form.text_field :firstName %>
+  </div>
+
+  <div>
+    <%= form.label :lastName, style: "display: block" %>
+    <%= form.text_field :lastName %>
+  </div>
+
+  <div>
+    <%= form.label :dateofBirth, style: "display: block" %>
+    <%= form.date_field :dateofBirth %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :mobileNumber, style: "display: block" %>
+    <%= form.text_field :mobileNumber %>
+  </div>
+
+  <div>
+    <%= form.label :idType, style: "display: block" %>
+    <%= form.text_field :idType %>
+  </div>
+
+  <div>
+    <%= form.label :idNumber, style: "display: block" %>
+    <%= form.text_field :idNumber %>
+  </div>
+
+  <div>
+    <%= form.label :registeredBy, style: "display: block" %>
+    <%= form.number_field :registeredBy %>
+  </div>
+
+  <div>
+    <%= form.label :comments, style: "display: block" %>
+    <%= form.text_field :comments %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
