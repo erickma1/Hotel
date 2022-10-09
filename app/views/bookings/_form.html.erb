@@ -20,30 +20,36 @@
 
   
 <div class="mb-3">
-    <%= form.label :customer_name, style: "display: horizontal" %>
+    <%= form.label :customer_name, "Client Name", style: "display: horizontal" %>
     <%= form.text_field :customer_name, class: "form-control", placeholder:  @b %>
   </div>
 
-  <div class="mb-3">
+  <%
+=begin%>
+ <div class="mb-3">
     <%= form.label :customer_id, style: "display: horizontal" %>
     <%= form.number_field :customer_id, class: "form-control" %>
-  </div>
+  </div> 
+<%
+=end%>
 
   <div class="mb-3">
-    <%= form.label :room_id, style: "display: horizontal" %>
+    <%= form.label :room_id, "Room Number", style: "display: horizontal" %>
     <%= form.number_field :room_id, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :start_date, style: "display: horizontal" %>
+    <%= form.label :start_date, "Check-in Date", style: "display: horizontal" %>
     <%= form.date_field :start_date, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :end_date, style: "display: block" %>
+    <%= form.label :end_date,  "Check-out Date",style: "display: block" %>
     <%= form.date_field :end_date, class: "form-control" %>
   </div>
-
+ 
+ <%
+=begin%>
  <div class="mb-3">
     <%= form.label :issued_by, style: "display: block" %>
     <%= form.number_field :issued_by, class: "form-control" %>
@@ -63,7 +69,9 @@
     <%= form.label :closed_by, style: "display: block" %>
     <%= form.number_field :closed_by, class: "form-control" %>
   </div>
-
+ 
+<%
+=end%>
  <div class="mb-3">
     <%= form.label :comments, style: "display: block" %>
     <%= form.text_field :comments, class: "form-control" %>

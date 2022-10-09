@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     @customer = request.params["_id"]
     @name = Customer.where(id: @customer).pluck(:firstName, :lastName).map { |x| x.flatten.join(' ') }
     @b = @name.shift.strip
+    
   end
 
   # GET /bookings/1/edit
@@ -29,6 +30,7 @@ class BookingsController < ApplicationController
 
   # POST /bookings or /bookings.json
   def create
+    
     @booking = Booking.new(booking_params)
 
     respond_to do |format|
@@ -58,7 +60,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1 or /bookings/1.json
   def destroy
     @booking.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: "Booking was successfully destroyed." }
       format.json { head :no_content }
@@ -74,5 +76,6 @@ class BookingsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def booking_params
       params.require(:booking).permit(:room_id, :start_date, :end_date, :issued_by, :booking_status, :closed_date, :closed_by, :comments, :customer_id)
+      
     end
 end
