@@ -17,11 +17,9 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
-
-    @customer = request.params["_id"]
-    @name = Customer.where(id: @customer).pluck(:firstName, :lastName).map { |x| x.flatten.join(' ') }
+    @@customer = request.params["_id"]
+    @name = Customer.where(id: @@customer).pluck(:firstName, :lastName).map { |x| x.flatten.join(' ') }
     @b = @name.shift.strip
-    
   end
 
   # GET /bookings/1/edit
@@ -32,6 +30,9 @@ class BookingsController < ApplicationController
   def create
     
     @booking = Booking.new(booking_params)
+    @booking.customer_id = @@customer
+    #@booking.save
+
 
     respond_to do |format|
       if @booking.save
@@ -75,7 +76,7 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:room_id, :start_date, :end_date, :issued_by, :booking_status, :closed_date, :closed_by, :comments, :customer_id)
+      params.require(:booking).permit(:room_id, :start_date, :end_date, :issued_by, :booking_status, :closed_date, :closed_by, :comments)
       
     end
 end
