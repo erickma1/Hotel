@@ -35,17 +35,17 @@
 
   <div class="mb-3">
     <%= form.label :room_id, "Room Number", style: "display: horizontal" %>
-    <%= form.number_field :room_id, class: "form-control" %>
+    <%= form.number_field :room_id, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :start_date, "Check-in Date", style: "display: horizontal" %>
-    <%= form.date_field :start_date, class: "form-control" %>
+    <%= form.date_field :start_date, class: "form-control", required: true  %>
   </div>
 
   <div class="mb-3">
     <%= form.label :end_date,  "Check-out Date",style: "display: block" %>
-    <%= form.date_field :end_date, class: "form-control" %>
+    <%= form.date_field :end_date, class: "form-control", required: true %>
   </div>
  
  <%
