@@ -17,6 +17,8 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
+    @room = Room.all
+   # @room_options = Room.all.map{ |u| [ u.roomNumber, u.name ] }
     @@customer = request.params["_id"]
     @name = Customer.where(id: @@customer).pluck(:firstName, :lastName).map { |x| x.flatten.join(' ') }
     @b = @name.shift.strip

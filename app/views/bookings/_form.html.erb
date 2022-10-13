@@ -21,7 +21,7 @@
   
 <div class="mb-3">
     <%= form.label :customer_name, "Client Name", style: "display: horizontal" %>
-    <%= form.text_field :customer_name, class: "form-control", placeholder:  @b %>
+    <%= form.text_field :customer_name, class: "form-control", placeholder:  @b, disabled:true %>
   </div>
 
   <%
@@ -33,10 +33,28 @@
 <%
 =end%>
 
-  <div class="mb-3">
+<%
+=begin%>
+   <div class="mb-3">
+  <%= form.label :room_id, "Room Number", style: "display: block"%>
+  <%= select_tag(:room_id, options_for_select(@room_options), class: "form-control" )%>
+  </div> 
+<%
+=end%>
+
+   <div class="mb-3">
+  <%= form.label :room_id, "Room Number", style: "display: block"%>
+    <%= form.select :room_id, @room.map { |t| [t.roomNumber, t.roomNumber]}, {}, class: "form-control", required: true  %>
+  </div>
+
+<%
+=begin%>
+   <div class="mb-3">
     <%= form.label :room_id, "Room Number", style: "display: horizontal" %>
     <%= form.number_field :room_id, class: "form-control", required: true %>
-  </div>
+  </div> 
+<%
+=end%>
 
   <div class="mb-3">
     <%= form.label :start_date, "Check-in Date", style: "display: horizontal" %>
@@ -74,11 +92,13 @@
 =end%>
  <div class="mb-3">
     <%= form.label :comments, style: "display: block" %>
-    <%= form.text_field :comments, class: "form-control" %>
+    <%= form.text_area :comments, class: "form-control" %>
   </div>
+  
+
 
   <div>
-    <%= form.submit "Submit", class: "btn btn-primary"  %>
+    <%= form.submit "Submit", class: "btn btn-primary"%>
   </div>
 
 
