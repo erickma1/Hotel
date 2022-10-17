@@ -58,13 +58,23 @@
 
   <div class="mb-3">
     <%= form.label :start_date, "Check-in Date", style: "display: horizontal" %>
-    <%= form.date_field :start_date, class: "form-control", required: true  %>
+    <%= form.date_field :start_date, class: "form-control",  required: true  %>
   </div>
 
   <div class="mb-3">
     <%= form.label :end_date,  "Check-out Date",style: "display: block" %>
-    <%= form.date_field :end_date, class: "form-control", required: true %>
+    <%= form.date_field :end_date, class: "form-control", required: true, :onchange => "getFormvalue()" %>
   </div>
+
+
+<script type="text/javascript">
+  function getFormvalue()
+{
+  document.getElementById("bill").innerHTML = 5 + 6;
+      
+}
+</script>
+
  
  <%
 =begin%>
@@ -94,21 +104,29 @@
     <%= form.label :comments, style: "display: block" %>
     <%= form.text_area :comments, class: "form-control" %>
   </div>
-  
-
 
   <div>
     <%= form.submit "Submit", class: "btn btn-primary"%>
   </div>
 
+</div>
 
-
-
-
-  </div>
 </div>
 </div>
 
+ <div class="col-sm-3">
+  <div class="card">
+   
+     <div class="card-header" style="background-color: #e3f2fd;"><img src="..." class="card-img-top" alt="..."> Cart</div>
+      <div class="card-body">
+      
+      <p id="bill"></p>
+      
+      </div>
+      </div>
+      </div>
+     
+    </div>
 
 
 <% end %>
