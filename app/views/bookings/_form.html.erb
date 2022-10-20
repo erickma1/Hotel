@@ -44,7 +44,7 @@
 
    <div class="mb-3">
   <%= form.label :room_id, "Room Number", style: "display: block"%>
-    <%= form.select :room_id, @room.map { |t| [t.roomNumber, t.roomNumber]}, {}, class: "form-control", required: true  %>
+    <%= form.select :room_id, @room.map { |t| [t.roomNumber, t.roomRate]}, {},id: "roomrates", class: "form-control", required: true  %>
   </div>
 
 <%
@@ -58,24 +58,32 @@
 
   <div class="mb-3">
     <%= form.label :start_date, "Check-in Date", style: "display: horizontal" %>
-    <%= form.date_field :start_date, class: "form-control",  required: true  %>
+    <%= form.date_field :start_date, class: "form-control",id: "in_date",  required: true  %>
   </div>
 
   <div class="mb-3">
     <%= form.label :end_date,  "Check-out Date",style: "display: block" %>
-    <%= form.date_field :end_date, class: "form-control", required: true, :onchange => "getFormvalue()" %>
+    <%= form.date_field :end_date, class: "form-control",id: "out_date", required: true, :onchange => "getFormvalue()" %>
   </div>
 
 
 <script type="text/javascript">
   function getFormvalue()
 {
-  document.getElementById("bill").innerHTML = 5 + 6;
-      
+  
+  var startDate  = $("#in_date").val();
+  var endDate    = $("#out_date").val();
+
+var diffInMs   = new Date(endDate) - new Date(startDate)
+var diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+document.getElementById("bill").innerHTML = diffInDays;
+document.getElementById("roomrate").innerHTML =  $("#roomrates").val() * diffInDays;
+
+
+   //document.getElementById("bill").innerHTML = $("#roomrate").val();
 }
 </script>
 
- 
  <%
 =begin%>
  <div class="mb-3">
@@ -117,10 +125,14 @@
  <div class="col-sm-3">
   <div class="card">
    
-     <div class="card-header" style="background-color: #e3f2fd;"><img src="..." class="card-img-top" alt="..."> Cart</div>
+     <div class="card-header" style="background-color: #e3f2fd;"><img src="" class="card-img-top" alt="..."> Cart</div>
       <div class="card-body">
       
-      <p id="bill"></p>
+       No of Nights<p class="badge bg-primary text-wrap" style="width: 6rem;" id="bill"></p>
+       <br/>
+       Room Rate<p class="fw-bold" id="roomrates"></p>
+       <br/>
+       Total Bill<p class="fw-bold" id="roomrate"></p>
       
       </div>
       </div>
