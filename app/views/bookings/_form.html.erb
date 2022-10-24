@@ -71,11 +71,11 @@
   function getFormvalue()
 {
   
-  var startDate  = $("#in_date").val();
-  var endDate    = $("#out_date").val();
+  const startDate  = $("#in_date").val();
+  const endDate    = $("#out_date").val();
 
-var diffInMs   = new Date(endDate) - new Date(startDate)
-var diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+const diffInMs   = new Date(endDate) - new Date(startDate)
+const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
 document.getElementById("bill").innerHTML = diffInDays;
 document.getElementById("roomrate").innerHTML =  $("#roomrates").val() * diffInDays;
 
